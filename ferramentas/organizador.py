@@ -1,3 +1,5 @@
+from ferramentas.uteis import pedir_pasta_valida
+
 import os
 import shutil
 
@@ -34,16 +36,6 @@ def obter_categoria (extensao, categorias, extensoes_desconhecidas): # Caso o te
 
     extensoes_desconhecidas[extensao] = resposta
     return resposta
-
-def pedir_pasta_valida():
-    while True:
-        pasta = input ("Digite o caminho da pasta a organizar: ").strip()
-
-        # os.path.isdir(pasta) verifica se o caminho existe e é uma pasta e não um arquivo
-        if os.path.isdir(pasta):
-            return pasta
-
-        print (f"A pasta {pasta} não é válida. Tente novamente.")
 
 def executar ():
     pasta = pedir_pasta_valida()
