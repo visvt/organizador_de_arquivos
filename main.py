@@ -17,10 +17,10 @@ def main():
                 organizador.executar()
 
             case "2":
-                relatorio.executar()
+                renomeador.executar()
 
             case "3":
-                renomeador.executar()
+                relatorio.executar()
 
             case "0":
                 print ("Até logo!")

@@ -11,7 +11,7 @@ def renomear_sequencial(pasta):
     digitos = int(digitos_input) if digitos_input else 3
 
     arquivos = [nome for nome in os.listdir(pasta)
-                if os.path.isfile(os.path.join(pasta, nome))]  # 
+                if os.path.isfile(os.path.join(pasta, nome))]   
 
     for nome_antigo in arquivos:
         extensao = os.path.splitext (nome_antigo)[1]
@@ -26,7 +26,6 @@ def renomear_sequencial(pasta):
         print (f"{nome_antigo} -> {nome_novo}")
 
         numero_atual += 1
-
 
     print ("Renomeação concluída")
 
