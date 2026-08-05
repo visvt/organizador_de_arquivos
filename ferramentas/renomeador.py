@@ -30,7 +30,31 @@ def renomear_sequencial(pasta):
     print ("Renomeação concluída")
 
 def renomear_busca_substituicao(pasta):
-    print ("Em construção")
+    texto_buscar = input("Digite o texto que deseja substituir: ").strip()
+    texto_substituir = input("Digite o novo texto: ").strip()
+
+    arquivos = [ nome for nome in os.listdir(pasta)
+                if os.path.isfile(os.path.join(pasta, nome))]
+
+    algum_arquivo_alterado = False
+
+    for nome_antigo in arquivos:
+        if texto_buscar in nome_antigo:
+            nome_novo = nome_antigo.replace(texto_buscar, texto_substituir)
+
+            caminho_antigo = os.path.join(pasta, nome_antigo)
+            caminho_novo = os.path.join(pasta, nome_novo)
+
+            os.rename(caminho_antigo, caminho_novo)
+            print (f"{nome_antigo} -> {nome_novo}")
+
+            algum_arquivo_alterado = True
+
+        if not algum_arquivo_alterado:
+            print (f"Nenhum arquivo continha o texto '{texto_buscar}'.")
+        else:
+            print("Renomeação concluída!")
+
 
 def executar():
     pasta = pedir_pasta_valida()
