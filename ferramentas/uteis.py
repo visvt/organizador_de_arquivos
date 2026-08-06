@@ -9,3 +9,13 @@ def pedir_pasta_valida():
             return pasta
 
         print (f"A pasta {pasta} não é válida. Tente novamente.")
+
+
+def pedir_arquivo_valido():
+    while True:
+        caminho = input("Digite o caminho da planilhas (.csv ou .xlsx): ").strip()
+
+        if os.path.isfile(caminho):
+            return caminho
+
+        print (f"O arquivo {caminho} não existe. Tente novamente.")        
